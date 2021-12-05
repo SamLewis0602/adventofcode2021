@@ -3,11 +3,12 @@ def read_file(filename):
     lines = []
     with open(filename) as f:
         for line in f:
-            lines.append(int(line.strip()))
+            lines.append(line.strip())
     return lines
 
 
-nums = read_file('./input/1.txt')
+nums = read_file('./input/day1.txt')
+nums = [int(num) for num in nums]
 
 
 def get_increases(nums):
@@ -31,5 +32,6 @@ def sliding_window(nums):
     return increases
 
 
-print(get_increases(nums))
-print(sliding_window(nums))
+if __name__ == '__main__':
+    print(get_increases(nums))
+    print(sliding_window(nums))
